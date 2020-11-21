@@ -1,0 +1,26 @@
+  <div class="container">
+    <h1 class="h1">Welcome to Starships required stops calculator</h1>
+    <div class="h6">Enter the required distance <br /></div>
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" (click)="GetStarships(distance)"><i class="fa fa-search"></i></span>
+        <span class="input-group-text">MGMT</span>
+      </div>
+      <input type="text" class="form-control" [(ngModel)]="distance" name="distance">
+    </div>
+
+    <div>
+      <table class="table table-striped" *ngIf="starships">
+        <tr class="row">
+          <th class="col">Starship Name</th>
+          <th class="col">Required Stops</th>
+        </tr>
+        <tr class="row" *ngFor="let ship of starships">
+          <td class="col td_name">{{ship.name}} </td>
+          <td class="col td_stops_number">{{ship.stopsNumber}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+
